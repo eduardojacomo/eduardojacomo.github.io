@@ -1,19 +1,29 @@
+// vite.config.js
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  // Use a raiz '/' para o base path, já que o nome do repositório
-  // é igual ao domínio do GitHub Pages.
-  base: '/portifolio/',
-  plugins: [
-    vue(),
-  ],
+  base: '/',
+  plugins: [vue()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+  optimizeDeps: {
+    include: [
+      '@fortawesome/fontawesome-svg-core',
+      '@fortawesome/free-solid-svg-icons',
+      '@fortawesome/vue-fontawesome'
+    ]
+  },
+  build: {
+    rollupOptions: {
+      external: [],
+    },
+    commonjsOptions: {
+      include: [/node_modules/],
+    },
   }
 })
