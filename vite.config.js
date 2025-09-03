@@ -7,7 +7,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   // Use a raiz '/' para o base path, já que o nome do repositório
   // é igual ao domínio do GitHub Pages.
-  base: '/',
+  base: '/portifolio/',
   plugins: [
     vue(),
   ],
