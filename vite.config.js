@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  base: '/', 
+  base: '/portifolio/', // 👈 nome exato do repositório no GitHub
   plugins: [vue()],
   resolve: {
     alias: {
@@ -19,8 +19,11 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: [], 
+      // 👇 força incluir no bundle final
+      external: [],
+    },
+    commonjsOptions: {
+      include: [/node_modules/],
     }
   }
 })
-
