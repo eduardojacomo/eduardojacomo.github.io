@@ -226,6 +226,12 @@ onMounted(() => {
   }
 }
 
+main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 /* Modal wrapper que contém todas as animações */
 .modal-wrapper {
   position: fixed;
@@ -275,6 +281,7 @@ onMounted(() => {
   gap: 0.5rem;
   min-height: 87vh;
   width: 100%;
+  max-width: 1280px;
   padding: 70px 2rem 0.5rem 2rem;
 }
 

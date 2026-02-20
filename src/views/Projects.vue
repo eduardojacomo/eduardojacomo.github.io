@@ -67,47 +67,49 @@ onMounted(()=>{
 </script>
 
 <template>
-  <div class="container">
-    <div class="content">
-      <router-link to="/#portfolio" class="close-button"><i class="fa-solid fa-arrow-left"></i></router-link>
-      <div class="description">
-        <Transition name="fade-blur" mode="out-in">
-          <h2 :key="currentLocaleKey"> {{t(`_${projectStore.codigo}._title`)}} </h2>
-        </Transition>
-        <Transition name="fade-blur" mode="out-in">
-          <p :key="currentLocaleKey">{{t(`_${projectStore.codigo}._details`)}}</p>
-        </Transition>
-        <Transition name="fade-blur" mode="out-in">
-          <ul :key="currentLocaleKey">
-            <li v-for="(tag, index) in projectStore.tags" :key="index">{{ tag }} </li>
-          </ul>   
-        </Transition>
-        <Transition name="fade-blur" mode="out-in">
-          <div class="links" :key="currentLocaleKey">
-            <div v-for="(l,index) in projectStore.links" :key="index">
-              <a :href="l.link" target="_blank" v-if="l.plataforma==='Code'"><span class="links-text"> <i class="devicon-github-original"></i> {{ l.plataforma }}</span></a>
-              <a :href="l.link" target="_blank" v-else><span class="links-text"> <i :class="l.icon"></i>  {{ l.plataforma }}</span></a>
-            </div>
-          </div>  
-        </Transition>
-      </div>
-      <div class="content-projeto" v-if="projectStore">
-        <Transition name="fade-blur" mode="out-in">
-          <Navegador :imageSrc = "projectStore.imagesNavegador[currentImageIndex].src" :url="projectStore.url" v-if="resolucao === 'Navegador'" :key="currentLocaleKey"/>
-        </Transition>
-        <Transition name="fade-blur" mode="out-in">
-          <Tablet :imageSrc = "projectStore.imagesTablet[currentImageIndex].src" :url="projectStore.url" v-if="resolucao === 'Tablet'" :key="currentLocaleKey"/>
-        </Transition>
-        <Transition name="fade-blur" mode="out-in">
-          <Smartphone :imageSrc = "projectStore.imagesSmartphone[currentImageIndex].src" :url="projectStore.url" v-if="resolucao ==='Smartphone'" :key="currentLocaleKey"/>
-        </Transition>
-     
-        <!-- <img :key="currentImageIndex" :src="project.images[currentImageIndex]" alt="Imagem do Projeto" /> -->
-         <div class="botoes" v-if="projectStore.imagesNavegador">
-          <button @click="prevImage" :disabled="currentImageIndex === 0"><i class="fa-solid fa-chevron-left"></i></button>
-          <button @click="nextImage" :disabled="currentImageIndex === projectStore.imagesNavegador.length - 1"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="main-container">
+    <div class="container">
+      <div class="content">
+        <router-link to="/#portfolio" class="close-button"><i class="fa-solid fa-arrow-left"></i></router-link>
+        <div class="description">
+          <Transition name="fade-blur" mode="out-in">
+            <h2 :key="currentLocaleKey"> {{t(`_${projectStore.codigo}._title`)}} </h2>
+          </Transition>
+          <Transition name="fade-blur" mode="out-in">
+            <p :key="currentLocaleKey">{{t(`_${projectStore.codigo}._details`)}}</p>
+          </Transition>
+          <Transition name="fade-blur" mode="out-in">
+            <ul :key="currentLocaleKey">
+              <li v-for="(tag, index) in projectStore.tags" :key="index">{{ tag }} </li>
+            </ul>   
+          </Transition>
+          <Transition name="fade-blur" mode="out-in">
+            <div class="links" :key="currentLocaleKey">
+              <div v-for="(l,index) in projectStore.links" :key="index">
+                <a :href="l.link" target="_blank" v-if="l.plataforma==='Code'"><span class="links-text"> <i class="devicon-github-original"></i> {{ l.plataforma }}</span></a>
+                <a :href="l.link" target="_blank" v-else><span class="links-text"> <i :class="l.icon"></i>  {{ l.plataforma }}</span></a>
+              </div>
+            </div>  
+          </Transition>
         </div>
-
+        <div class="content-projeto" v-if="projectStore">
+          <Transition name="fade-blur" mode="out-in">
+            <Navegador :imageSrc = "projectStore.imagesNavegador[currentImageIndex].src" :url="projectStore.url" v-if="resolucao === 'Navegador'" :key="currentLocaleKey"/>
+          </Transition>
+          <Transition name="fade-blur" mode="out-in">
+            <Tablet :imageSrc = "projectStore.imagesTablet[currentImageIndex].src" :url="projectStore.url" v-if="resolucao === 'Tablet'" :key="currentLocaleKey"/>
+          </Transition>
+          <Transition name="fade-blur" mode="out-in">
+            <Smartphone :imageSrc = "projectStore.imagesSmartphone[currentImageIndex].src" :url="projectStore.url" v-if="resolucao ==='Smartphone'" :key="currentLocaleKey"/>
+          </Transition>
+       
+          <!-- <img :key="currentImageIndex" :src="project.images[currentImageIndex]" alt="Imagem do Projeto" /> -->
+           <div class="botoes" v-if="projectStore.imagesNavegador">
+            <button @click="prevImage" :disabled="currentImageIndex === 0"><i class="fa-solid fa-chevron-left"></i></button>
+            <button @click="nextImage" :disabled="currentImageIndex === projectStore.imagesNavegador.length - 1"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+  
+        </div>
       </div>
     </div>
   </div>
@@ -162,8 +164,15 @@ onMounted(()=>{
     }
 } */
 
+.main-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .container {
   width: 100%;
+  max-width: 1280px;
   height: 100vh;
   background-color: var(--color-backgroud);
   color: var(--color-text);

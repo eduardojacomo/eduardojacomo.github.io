@@ -72,6 +72,11 @@ onMounted(() => {
 
 <style scoped>
 
+main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .container {
   display: flex;
@@ -79,6 +84,7 @@ onMounted(() => {
   gap: .5rem;
   min-height: 87vh;
   width: 100%;
+  max-width: 1280px;
   padding: 70px 2rem 2rem 2rem;
 }
 
