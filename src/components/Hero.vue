@@ -52,7 +52,7 @@
        
         <div class="vertical">
             <Transition name="fade-blur" mode="out-in">
-                <a href="#about" class="botao-scroll" :key="currentLocaleKey"><span>{{ t('_homeMore') }}</span><font-awesome-icon icon="fa-solid fa-arrow-right" /></a>
+                <a href="#about" class="botao-scroll" :key="currentLocaleKey"><span>{{ t('_homeMore') }}</span><i class="fa-solid fa-arrow-right"></i></a>
             </Transition>
         </div>
     </div>

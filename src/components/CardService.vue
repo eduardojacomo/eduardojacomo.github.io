@@ -27,7 +27,7 @@ const { t } = useI18n();
     <div class="card-container">
         <div class="position-icon">
             <div class="card-icon">
-                <font-awesome-icon :icon="props.icon" />
+                <i :class="props.icon" ></i>
             </div>
         </div>
         <div class="card-title">

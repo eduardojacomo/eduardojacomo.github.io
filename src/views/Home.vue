@@ -1,5 +1,5 @@
 <script setup>
-  import Banner from '../components/Banner.vue'
+  import Hero from '../components/Hero.vue'
   import About from '../components/About.vue'
   import Portfolio from '../components/Portfolio.vue'
   import Services from '@/components/Services.vue';
@@ -9,7 +9,7 @@
 <template>
   <main>
     <section id="home" class="section">
-      <Banner />
+      <Hero />
     </section>
     <section id="services" class="section">
       <Services />

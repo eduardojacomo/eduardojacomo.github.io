@@ -69,7 +69,7 @@ onMounted(()=>{
 <template>
   <div class="container">
     <div class="content">
-      <router-link to="/#portfolio" class="close-button"><font-awesome-icon icon="fa-solid fa-arrow-left" /></router-link>
+      <router-link to="/#portfolio" class="close-button"><i class="fa-solid fa-arrow-left"></i></router-link>
       <div class="description">
         <Transition name="fade-blur" mode="out-in">
           <h2 :key="currentLocaleKey"> {{t(`_${projectStore.codigo}._title`)}} </h2>
@@ -86,7 +86,7 @@ onMounted(()=>{
           <div class="links" :key="currentLocaleKey">
             <div v-for="(l,index) in projectStore.links" :key="index">
               <a :href="l.link" target="_blank" v-if="l.plataforma==='Code'"><span class="links-text"> <i class="devicon-github-original"></i> {{ l.plataforma }}</span></a>
-              <a :href="l.link" target="_blank" v-else><span class="links-text"> <font-awesome-icon :icon="l.icon" />  {{ l.plataforma }}</span></a>
+              <a :href="l.link" target="_blank" v-else><span class="links-text"> <i :class="l.icon"></i>  {{ l.plataforma }}</span></a>
             </div>
           </div>  
         </Transition>
@@ -104,8 +104,8 @@ onMounted(()=>{
      
         <!-- <img :key="currentImageIndex" :src="project.images[currentImageIndex]" alt="Imagem do Projeto" /> -->
          <div class="botoes" v-if="projectStore.imagesNavegador">
-          <button @click="prevImage" :disabled="currentImageIndex === 0"><font-awesome-icon icon="fa-solid fa-chevron-left" /></button>
-          <button @click="nextImage" :disabled="currentImageIndex === projectStore.imagesNavegador.length - 1"><font-awesome-icon icon="fa-solid fa-chevron-right" /></button>
+          <button @click="prevImage" :disabled="currentImageIndex === 0"><i class="fa-solid fa-chevron-left"></i></button>
+          <button @click="nextImage" :disabled="currentImageIndex === projectStore.imagesNavegador.length - 1"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
 
       </div>

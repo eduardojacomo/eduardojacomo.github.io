@@ -153,7 +153,7 @@ onMounted(() => {
                   
                 <Transition name="slide-fade">
                     <button v-if="hoveredProjectIndex === index" @click="setProjectDetail(project)">
-                      <font-awesome-icon icon="fa-solid fa-external-link" />
+                      <i class="fa-solid fa-external-link"></i>
                     </button>
                  </Transition>
                  <!-- <Transition class="slide-fade">
