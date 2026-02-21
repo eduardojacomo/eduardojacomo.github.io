@@ -485,7 +485,7 @@ main{
 }
 
 .proj-item {
-  min-height: 70vh; /* Garante que cada projeto ocupe um espaço bom na tela */
+  min-height: 70vh; 
 }
 
 /* Thumbnail */
