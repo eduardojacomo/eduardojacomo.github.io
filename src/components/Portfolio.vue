@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import {storeToRefs} from 'pinia';
 import {useProjects} from '@/stores/projectStore'
-import {useLanguage} from '../stores/languageStore'
+import {useLanguage} from '@/stores/languageStore'
 
 const uselanguage = useLanguage();
 const { currentLocaleKey} = storeToRefs(uselanguage);

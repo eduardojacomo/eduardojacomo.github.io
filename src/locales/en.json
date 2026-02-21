@@ -22,14 +22,24 @@
       "_details":"Psychologist Renata, a specialist in cognitive behavioral therapy, needed a modern and functional website to improve her online presence and increase patient intake."
     },
     "_p2":{
-      "_title":"Ordering System",
-      "_description": "Order management system using the VueJS framework",
-      "_details":"This project simulates an ordering system, where the customer can choose the type of bread, meat and complements."
+      "_title":"Church Site",
+      "_description": "Modern and responsive website for a church",
+      "_details":"This project aims to provide a modern and responsive website for a church, containing information about the church, events, ministries etc."
     },
     "_p3":{
       "_title":"CourseAPI",
       "_description": "RestFull API using .NET, SQL Server, Entity Framework, Swager technologies",
       "_details":"This project aims to provide an API for courses, containing data on modules, classes, students, instructors, grades, class tracking, etc."
+    },
+    "_p4":{
+      "_title":"BlogAPI",
+      "_description": "RestFull API using JavaScript, ExpressJS, MongoDB and JWT technologies.",
+      "_details":"This project aims to provide an API for blog, containing data on posts, authors, categories, comments etc."
+    },
+    "_p5":{
+      "_title":"Ordering System",
+      "_description": "Order management system using the VueJS framework",
+      "_details":"This project simulates an ordering system, where the customer can choose the type of bread, meat and complements."
     },
     "_contactTitle": "Contact",
     "_contactDescription": "Do you need help completing a project, meeting a demand or creating a tool that helps you in your daily life?\nContact me!\nWe will be happy to discuss your ideas and find the best solution for your needs.",
