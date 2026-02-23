@@ -23,13 +23,13 @@ const services = [
   },
   {
     num: '03',
-    key: 'BOT',
+    key: 'Bots',
     route: '/bots',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/></svg>`,
   },
   {
     num: '04',
-    key: 'WebSolutions',
+    key: 'Web',
     route: '/websolutions',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
   },
@@ -111,6 +111,7 @@ main {
   background-color: #0a0a0a; /* Mesma cor das seções para não ver o Hero no fundo */
   position: relative;
   z-index: 0;
+  height: 100vh;
 }
 /* ── SECTION ── */
 .services-section {

@@ -42,32 +42,41 @@ export function useParallaxReveal(targetRef, options = {}) {
 
 export function useSectionShrink(sectionExit, sectionEnter) {
   let ctx;
+
   onMounted(() => {
-    ctx = gsap.context(() => {
+    // Criamos o contexto com matchMedia para lidar com a responsividade
+    ctx = gsap.matchMedia();
+
+    ctx.add({
+      // Define as condições (ajuste os pixels se necessário)
+      isDesktop: "(min-width: 1024px)",
+      isMobile: "(max-width: 1023px)"
+    }, (context) => {
+      // Extraímos as condições para facilitar o uso
+      const { isDesktop } = context.conditions;
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionEnter.value,
-          start: "top bottom", 
+          start: "top bottom",
           end: "top 20%",
           scrub: 1.5,
         }
       });
 
       tl.to(sectionExit.value, {
-        // Em vez de scale, usamos clip-path ou padding para ser sutil
-        // Aqui usamos padding lateral para dar o efeito de 2rem
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
+        // Lógica condicional para o padding
+        paddingLeft: isDesktop ? "2rem" : "0.5rem",
+        paddingRight: isDesktop ? "2rem" : "0.5rem",
         
-        // Se quiser que a seção inteira "estreite", o scale deve ser quase 1
         scale: 0.98, 
-        
-        borderBottomLeftRadius: "80px",
-        borderBottomRightRadius: "80px",
-        y: "-20px", // Subida mais sutil
+        borderBottomLeftRadius: isDesktop ? "80px" : "40px", // Reduzido no mobile para harmonia
+        borderBottomRightRadius: isDesktop ? "80px" : "40px",
+        y: isDesktop ? "-20px" : "-10px",
         ease: "power1.inOut"
       });
     });
   });
+
   onUnmounted(() => ctx && ctx.revert());
 }
