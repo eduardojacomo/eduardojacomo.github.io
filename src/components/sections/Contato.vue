@@ -202,9 +202,6 @@ onMounted(() => {
   margin-bottom: 6rem;
 }
 
-/* ═══════════════════
-   LEFT — CTA
-═══════════════════ */
 .ct-left {
   display: flex;
   flex-direction: column;
@@ -218,7 +215,7 @@ onMounted(() => {
   color: rgba(226,226,234,0.5);
 }
 
-/* WhatsApp CTA button */
+
 .ct-cta {
   display: inline-flex;
   align-items: center;
@@ -286,9 +283,6 @@ onMounted(() => {
 }
 .ct-email:hover { color: #4d7cff; border-color: rgba(77,124,255,0.4); }
 
-/* ═══════════════════
-   RIGHT — INFO
-═══════════════════ */
 .ct-right {
   display: flex;
   flex-direction: column;

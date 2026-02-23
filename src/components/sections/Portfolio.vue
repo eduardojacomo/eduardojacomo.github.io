@@ -32,7 +32,9 @@ const projects = ref([
       { plataforma: 'Preview', link: 'https://www.lifeandspiritchurch.com', icon: 'fa-solid fa-eye' },
     ],
     tags: ['HTML', 'CSS', 'JavaScript', 'Vue', 'Firebase'],
-    imagesNavegador: [{ src: new URL('/src/assets/lifeandspiritchurch.png', import.meta.url).href, alt: 'Image 1' }],
+    imagesNavegador: [{ src: new URL('/src/assets/lifeandspiritchurch.png', import.meta.url).href, alt: 'Image 1' },{ src: new URL('/src/assets/lifeandspiritchurch1.png', import.meta.url).href, alt: 'Image 2' }, { src: new URL('/src/assets/lifeandspiritchurch2.png', import.meta.url).href, alt: 'Image 3' },
+      { src: new URL('/src/assets/lifeandspiritchurch3.png', import.meta.url).href, alt: 'Image 4' },{ src: new URL('/src/assets/lifeandspiritchurch4.png', import.meta.url).href, alt: 'Image 5' },{ src: new URL('/src/assets/lifeandspiritchurch5.png', import.meta.url).href, alt: 'Image 5' }
+    ],
     imagesTablet:    [{ src: new URL('/src/assets/lifeandspiritchurch_tablet.png', import.meta.url).href, alt: 'Image 1' }],
     imagesSmartphone:[{ src: new URL('/src/assets/lifeandspiritchurch_mobile.png', import.meta.url).href, alt: 'Image 1' }],
   },
