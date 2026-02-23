@@ -1,4 +1,6 @@
 <template>
+  <div id="ej-cur" class="ej-cursor"></div>
+  <div id="ej-ring" class="ej-cursor-ring"></div>
   <header  :style="{ visibility: navbarVisible }">
     <Navbar />
   </header>
@@ -14,9 +16,10 @@
 import { RouterView } from 'vue-router';
 import {ref} from 'vue';
 import Navbar from './components/Navbar.vue';
+import { useCursor } from '@/composables/useCursor';
 
 const navbarVisible = ref('hidden'); 
-
+useCursor();
 
 function setNavbarBehind() {
   navbarVisible.value = 'hidden';

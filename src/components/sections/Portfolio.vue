@@ -123,25 +123,20 @@ function bindObservers() {
   ioObservers = [];
 
   if (isMobile.value) {
-    // Código mobile mantido...
     if (scrollerRef.value) {
       scrollerRef.value.removeEventListener('scroll', onHorizontalScroll);
       scrollerRef.value.addEventListener('scroll', onHorizontalScroll, { passive: true });
     }
   } else {
-    // DESKTOP: Ajuste fino para sincronização
     projectRefs.value.forEach((el, i) => {
       if (!el) return;
       const obs = new IntersectionObserver(
         ([entry]) => { 
-          // Se o elemento estiver cruzando a parte superior da tela
           if (entry.isIntersecting) {
             activeIndex.value = i; 
           }
         },
         { 
-          // rootMargin: "0px 0px -50% 0px" faz o "gatilho" ser o meio da tela
-          // threshold: 0.2 detecta assim que uma parte pequena aparece
           rootMargin: "-20% 0px -60% 0px", 
           threshold: 0 
         }
@@ -151,7 +146,7 @@ function bindObservers() {
     });
   }
 
-  // Reveal animation — always
+  
   document.querySelectorAll('.proj-animate').forEach(el => {
     const obs = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) el.classList.add('proj-in-view'); },
@@ -480,12 +475,12 @@ main{
 .proj-items {
   display: flex;
   flex-direction: column;
-  gap: 15vh; /* Aumentar o gap ajuda o Observer a ser mais preciso */
+  gap: 15vh; 
   padding-bottom: 10vh;
 }
 
 .proj-item {
-  min-height: 70vh; 
+  min-height: calc(100vh - 58.9px - 30vh);
 }
 
 /* Thumbnail */

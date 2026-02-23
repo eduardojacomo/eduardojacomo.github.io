@@ -69,21 +69,23 @@ onMounted(() => {
         <!-- LEFT: number + name -->
         <div class="svc-row-left">
           <span class="svc-num">{{ svc.num }}</span>
-          <Transition name="fade-blur" mode="out-in">
-            <h3 class="svc-name" :key="currentLocaleKey">
-              {{ t(`_service${svc.key}Title`) }}
-            </h3>
-          </Transition>
+          
+          <div class="row-service">
+            <Transition name="fade-blur" mode="out-in">
+              <h3 class="svc-name" :key="currentLocaleKey">
+                {{ t(`_service${svc.key}Title`) }}
+              </h3>
+            </Transition>
+            <Transition name="fade-blur" mode="out-in">
+              <p class="svc-desc" :key="currentLocaleKey">
+                {{ t(`_service${svc.key}`) }}
+              </p>
+            </Transition>
+
+          </div>
         </div>
 
-        <!-- CENTER: description -->
-        <div class="svc-row-center">
-          <Transition name="fade-blur" mode="out-in">
-            <p class="svc-desc" :key="currentLocaleKey">
-              {{ t(`_service${svc.key}`) }}
-            </p>
-          </Transition>
-        </div>
+
 
         <!-- RIGHT: icon + arrow -->
         <div class="svc-row-right">
@@ -108,7 +110,7 @@ onMounted(() => {
 <style scoped>
 
 main {
-  background-color: #0a0a0a; /* Mesma cor das seções para não ver o Hero no fundo */
+  background-color: #000; /* Mesma cor das seções para não ver o Hero no fundo */
   position: relative;
   z-index: 0;
   height: 100vh;
@@ -190,6 +192,13 @@ main {
 }
 .svc-row:hover .svc-num { color: #4d7cff; }
 
+
+.row-service {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .svc-name {
   font-family: 'Syne', sans-serif;
   font-size: clamp(1.3rem, 2vw, 1.75rem);
@@ -210,6 +219,7 @@ main {
   line-height: 1.8;
   color: rgba(226,226,234,0.38);
   transition: color 0.25s;
+  padding-left: 1.5rem;
 }
 .svc-row:hover .svc-desc { color: rgba(226,226,234,0.6); }
 

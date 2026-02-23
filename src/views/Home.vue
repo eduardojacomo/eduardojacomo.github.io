@@ -4,7 +4,7 @@
   import About from '../components/sections/About.vue'
   import Portfolio from '../components/sections/Portfolio.vue'
   import Services from '@/components/sections/Services.vue';
-  import Contato from '@/components/Contato.vue';
+  import Contato from '@/components/sections/Contato.vue';
   import { useParallaxReveal, useSectionShrink } from '@/composables/useSectionTransition';
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -114,7 +114,7 @@ html {
   position: relative;
   z-index: 3;
   width: 100%;
-  background: #181818;  
+  background: #0a0a0a;  
   transform-origin: top center; 
   overflow: hidden;
   /* transition: border-radius 0.2s;  */

@@ -5,21 +5,20 @@ import { useI18n } from 'vue-i18n';
 import { useLanguage } from '@/stores/languageStore';
 import { storeToRefs } from 'pinia';
 
-import { useCursor } from '@/composables/useCursor';
+// import { useCursor } from '@/composables/useCursor';
 import { useHeroAnimation } from '@/composables/useHeroAnimation';
 const uselanguage = useLanguage();
 const { currentLocaleKey } = storeToRefs(uselanguage);
 const { t } = useI18n();
 
-useCursor();
+// useCursor();
 useHeroAnimation();
 
 </script>
 
 <template>
-  <!-- Custom cursor (inject once at app level if preferred) -->
-  <div id="ej-cur" class="ej-cursor"></div>
-  <div id="ej-ring" class="ej-cursor-ring"></div>
+  <!-- <div id="ej-cur" class="ej-cursor"></div>
+  <div id="ej-ring" class="ej-cursor-ring"></div> -->
 
   <main>
     <section class="banner">
@@ -359,7 +358,7 @@ useHeroAnimation();
 }
 
 /* ── STACK ── */
-.hero-stack {}
+
 .stack-label {
   font-family: 'DM Mono', monospace;
   font-size: 0.6rem;

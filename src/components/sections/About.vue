@@ -3,6 +3,8 @@ import { ref, onMounted, computed, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
 import { useLanguage } from '@/stores/languageStore';
+// import { useCursor } from '@/composables/useCursor';
+
 
 const uselanguage = useLanguage();
 const { currentLocaleKey } = storeToRefs(uselanguage);
@@ -42,6 +44,7 @@ const groupIcons = {
 watch(locale, () => {});
 
 onMounted(() => {
+  // useCursor();
   const els = document.querySelectorAll('.abt-animate');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -55,7 +58,8 @@ onMounted(() => {
 
 <template>
   <section id="about" class="about-section">
-
+    <!-- <div id="ej-cur" class="ej-cursor"></div>
+    <div id="ej-ring" class="ej-cursor-ring"></div> -->
     <!-- Header -->
     <div class="about-header abt-animate">
       <p class="s-label">// 01 — Sobre</p>
