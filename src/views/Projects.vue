@@ -329,10 +329,20 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
 </template>
 
 <style scoped>
+
+* {
+  box-sizing: border-box;
+}
+
+.detail-page, .detail-page * {
+  box-sizing: border-box;
+}
+
 /* ── PAGE ── */
 .detail-page {
+  overflow-x: hidden;
   min-height: 100vh;
-  width: 100%;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   background: var(--color-background, #060608);
@@ -345,7 +355,9 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
 ══════════════════════════ */
 .detail-topbar {
   position: fixed;
-  top: 58.09px; left: 0; right: 0;
+  top: 58.09px; left: 0;
+  width: 100%;
+  box-sizing: border-box;
   height: 64px;
   display: flex;
   align-items: center;
@@ -492,6 +504,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
   line-height: 1.5;
   min-width: 0;
   word-break: break-all;
+  overflow-wrap: break-word;
 }
 .meta-link {
   display: inline-flex; align-items: center; gap: 0.35rem;
@@ -590,6 +603,8 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
 /* Viewport */
 .carousel-viewport {
   width: 100%;
+  max-width: 100%;
+  position: relative;
   overflow: hidden;
   cursor: grab;
   user-select: none;
@@ -601,10 +616,11 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
 /* Track */
 .carousel-track {
   display: flex;
+  width: 100%;
   transition: transform 0.5s cubic-bezier(.25,.46,.45,.94);
   will-change: transform;
 }
-.carousel-slide { flex: 0 0 100%; width: 100%; }
+.carousel-slide { flex: 0 0 100%; width: 100%; height: 100%; display: block; object-fit: contain;}
 
 .slide-img-wrap { position: relative; width: 100%; overflow: hidden; }
 .slide-img {
@@ -676,6 +692,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
 .car-thumbs {
   display: flex; gap: 4px;
   overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;
+  flex-wrap: wrap;
 }
 .car-thumbs::-webkit-scrollbar { display: none; }
 
@@ -787,8 +804,46 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
 @media screen and (max-width: 480px) {
   .detail-topbar { padding: 0 1rem; }
   .topbar-links { display: none; }
-  .detail-left { padding: 2rem 1rem; }
-  .content-block, .carousel-block, .detail-cta-block { padding: 2rem 1rem; }
-  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+  /* .detail-left { padding: 2rem 1rem; } */
+  /* .content-block, .carousel-block, .detail-cta-block { padding: 2rem 1rem; } */
+  .stack-grid { grid-template-columns: 1fr; }
+  .stack-item {
+    min-width: 0;
+  }
+  .stack-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+.content-block, 
+.carousel-block, 
+.detail-cta-block,
+.detail-left {
+  width: 100% !important;
+  max-width: 100% !important;
+  /* Garante que o padding fique "dentro" dos 100% */
+  box-sizing: border-box; 
+}
+
+.carousel-viewport {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden; /* ESSENCIAL */
+  position: relative;
+  display: block;
+}
+
+.carousel-track {
+  display: flex;
+  /* Não defina width: 100% aqui, deixe o flex-basis dos slides ditar a largura */
+}
+
+.carousel-slide {
+  flex: 0 0 100%; /* Cada slide ocupa exatamente 100% da largura do viewport */
+  width: 100%;
+  max-width: 100%;
+}
+
 }
 </style>
