@@ -79,16 +79,16 @@ onMounted(() => {
           </div>
         </div>
 
-        <div class="about-bio abt-animate">
-          <Transition name="fade-blur" mode="out-in">
-            <p :key="currentLocaleKey">{{ t('_aboutDescription') }}</p>
-          </Transition>
-        </div>
-
+        
       </div>
-
+      
+      <div class="about-bio abt-animate">
+        <Transition name="fade-blur" mode="out-in">
+          <p :key="currentLocaleKey">{{ t('_aboutDescription') }}</p>
+        </Transition>
+      </div>
       <!-- ── COL 2: serviços ── -->
-      <div class="col-services">
+      <!-- <div class="col-services">
         <p class="s-label abt-animate">O que eu ofereço</p>
 
         <div class="svc-list">
@@ -128,9 +128,12 @@ onMounted(() => {
             <p class="svc-desc">Sites, plataformas, e-commerce, CMS responsivos e otimizados para SEO.</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <!-- ── COL 3: skills ── -->
+
+
+    </div>
+          <!-- ── COL 3: skills ── -->
       <div class="col-skills">
         <p class="s-label abt-animate">Skills</p>
 
@@ -156,9 +159,8 @@ onMounted(() => {
             </div>
           </div>
         </div>
-      </div>
 
-    </div>
+      </div>
   </section>
 </template>
 
@@ -193,8 +195,8 @@ onMounted(() => {
 /* ── 3-COLUMN GRID ── */
 .about-grid {
   display: grid;
-  grid-template-columns: 400px 1fr 1fr;
-  gap: 3.5rem;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4.5rem;
   align-items: start;
 }
 
@@ -361,6 +363,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  margin-top: 3rem;
 }
 
 .skill-groups {

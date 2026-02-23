@@ -4,17 +4,23 @@ import { onMounted, onUnmounted } from 'vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function useParallaxReveal(targetRef) {
+export function useParallaxReveal(targetRef, options = {}) {
   let ctx;
 
   onMounted(() => {
     ctx = gsap.context(() => {
-      gsap.fromTo(targetRef.value, 
-        { 
-          y: "20vh", // Começa um pouco abaixo
+      let fromVars = { y: "0" };
+
+      if (options && options.hasBorder) {
+        fromVars = { 
+          y: "20vh", 
           borderTopLeftRadius: "100px", 
-          borderTopRightRadius: "100px",
-        }, 
+          borderTopRightRadius: "100px" 
+        };
+      }
+
+      gsap.fromTo(targetRef.value, 
+        fromVars, 
         { 
           y: 0, 
           borderTopLeftRadius: "0px", 
@@ -22,8 +28,8 @@ export function useParallaxReveal(targetRef) {
           ease: "none",
           scrollTrigger: {
             trigger: targetRef.value,
-            start: "top bottom", // Quando o topo da seção encosta no fim da tela
-            end: "top top",    // Quando o topo da seção encosta no topo da tela
+            start: "top bottom", 
+            end: "top top",
             scrub: true,
           }
         }
@@ -34,27 +40,32 @@ export function useParallaxReveal(targetRef) {
   onUnmounted(() => ctx && ctx.revert());
 }
 
-export function useSectionShrink(portfolioRef, contactRef) {
+export function useSectionShrink(sectionExit, sectionEnter) {
   let ctx;
   onMounted(() => {
     ctx = gsap.context(() => {
-      // Timeline para sincronizar os dois movimentos
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: contactRef.value, // O gatilho é a entrada do contato
-          start: "top 80%",          // Começa quando o contato está quase entrando
-          end: "top 10%",            // Termina quando o contato cobriu quase tudo
+          trigger: sectionEnter.value,
+          start: "top bottom", 
+          end: "top 20%",
           scrub: 1.5,
         }
       });
 
-      tl.to(portfolioRef.value, {
-        width: "80%",
-        scale: 0.9,
-        borderBottomLeftRadius: "100px",
-        borderBottomRightRadius: "100px",
-        y: "-50px", // Leve subida para efeito de profundidade
-        ease: "none"
+      tl.to(sectionExit.value, {
+        // Em vez de scale, usamos clip-path ou padding para ser sutil
+        // Aqui usamos padding lateral para dar o efeito de 2rem
+        paddingLeft: "2rem",
+        paddingRight: "2rem",
+        
+        // Se quiser que a seção inteira "estreite", o scale deve ser quase 1
+        scale: 0.98, 
+        
+        borderBottomLeftRadius: "80px",
+        borderBottomRightRadius: "80px",
+        y: "-20px", // Subida mais sutil
+        ease: "power1.inOut"
       });
     });
   });
