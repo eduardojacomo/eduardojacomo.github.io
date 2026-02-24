@@ -17,19 +17,17 @@ useHeroAnimation();
 </script>
 
 <template>
-  <!-- <div id="ej-cur" class="ej-cursor"></div>
-  <div id="ej-ring" class="ej-cursor-ring"></div> -->
 
   <main>
     <section class="banner">
 
       <!-- Background grid -->
       <div class="hero-grid" aria-hidden="true"></div>
-      <!-- Glow blobs -->
+
       <div class="hero-blob" aria-hidden="true"></div>
       <div class="hero-blob hero-blob--sm" aria-hidden="true"></div>
 
-      <!-- Left social strip -->
+
       <div class="socials">
         <div class="linha-vertical"></div>
         <a href="https://www.linkedin.com/in/eduardojacomo/" target="_blank" aria-label="LinkedIn">
@@ -43,7 +41,7 @@ useHeroAnimation();
       <!-- Main content: two-column grid -->
       <div class="hero-content">
 
-        <!-- ── COL LEFT: nome + lead + botões ── -->
+
         <div class="hero-col-left">
 
           <p class="hero-eyebrow">
@@ -277,7 +275,7 @@ useHeroAnimation();
   display: block;
   transform: translateY(105%);
 }
-.hero-line-dim { color: rgba(226, 226, 234, 0.32); }
+.hero-line-dim { color: rgba(244, 241, 241, 0.645); }
 
 /* ── TEXT EFFECT ── */
 .hero-text-effect {

@@ -1,14 +1,14 @@
 <template>
   <div id="ej-cur" class="ej-cursor"></div>
   <div id="ej-ring" class="ej-cursor-ring"></div>
-  <header  :style="{ visibility: navbarVisible }">
+  <header>
     <Navbar />
   </header>
   <main class="main-content">
-    <transition name="page-transition" mode="out-in" @before-enter="setNavbarBehind" 
-    @after-enter="resetNavbar">
+    <!-- <transition name="page-transition" mode="out-in" @before-enter="setNavbarBehind" 
+    @after-enter="resetNavbar"> -->
       <router-view />
-    </transition>
+    <!-- </transition> -->
   </main>
 </template>
 

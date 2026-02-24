@@ -338,7 +338,6 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
   box-sizing: border-box;
 }
 
-/* ── PAGE ── */
 .detail-page {
   overflow-x: hidden;
   min-height: 100vh;
@@ -350,9 +349,6 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
   padding-top: 58.09px;
 }
 
-/* ══════════════════════════
-   TOP BAR
-══════════════════════════ */
 .detail-topbar {
   position: fixed;
   top: 58.09px; left: 0;
@@ -408,9 +404,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
 }
 .topbar-link:hover { color: #4d7cff; border-color: rgba(77,124,255,0.4); }
 
-/* ══════════════════════════
-   LAYOUT — sticky left / scroll right
-══════════════════════════ */
+
 .detail-layout {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -418,9 +412,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
   min-height: calc(100vh - 64px);
 }
 
-/* ══════════════════════════
-   LEFT — STICKY INFO
-══════════════════════════ */
+
 .detail-left {
   position: sticky;
   top: 64px;
@@ -545,9 +537,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
 .detail-link svg { opacity: 0; transform: translateX(-4px); transition: opacity 0.2s, transform 0.2s; }
 .detail-link:hover svg { opacity: 1; transform: translateX(0); }
 
-/* ══════════════════════════
-   RIGHT — SCROLLABLE
-══════════════════════════ */
+
 .detail-right {
   display: flex;
   flex-direction: column;
@@ -577,9 +567,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
   max-width: 680px;
 }
 
-/* ══════════════════════════
-   CAROUSEL
-══════════════════════════ */
+
 .carousel-block {
   padding: 4rem;
   border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -741,7 +729,6 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
   color: rgba(226,226,234,0.45);
 }
 
-/* ── Bottom CTA block ── */
 .detail-cta-block {
   padding: 4rem;
 }
@@ -804,8 +791,6 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
 @media screen and (max-width: 480px) {
   .detail-topbar { padding: 0 1rem; }
   .topbar-links { display: none; }
-  /* .detail-left { padding: 2rem 1rem; } */
-  /* .content-block, .carousel-block, .detail-cta-block { padding: 2rem 1rem; } */
   .stack-grid { grid-template-columns: 1fr; }
   .stack-item {
     min-width: 0;
@@ -822,25 +807,24 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
 .detail-left {
   width: 100% !important;
   max-width: 100% !important;
-  /* Garante que o padding fique "dentro" dos 100% */
   box-sizing: border-box; 
 }
 
 .carousel-viewport {
   width: 100%;
   max-width: 100%;
-  overflow: hidden; /* ESSENCIAL */
+  overflow: hidden; 
   position: relative;
   display: block;
 }
 
 .carousel-track {
   display: flex;
-  /* Não defina width: 100% aqui, deixe o flex-basis dos slides ditar a largura */
+  
 }
 
 .carousel-slide {
-  flex: 0 0 100%; /* Cada slide ocupa exatamente 100% da largura do viewport */
+  flex: 0 0 100%; 
   width: 100%;
   max-width: 100%;
 }
