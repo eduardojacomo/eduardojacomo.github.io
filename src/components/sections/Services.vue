@@ -120,6 +120,10 @@ main {
   padding: 8rem 4rem;
   border-top: 1px solid rgba(255,255,255,0.06);
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ── HEADER ── */
@@ -146,6 +150,8 @@ main {
   display: flex;
   flex-direction: column;
   border-top: 1px solid rgba(255,255,255,0.06);
+  max-width: 1280px;
+  width: 100%;
 }
 
 /* ── ROW ── */

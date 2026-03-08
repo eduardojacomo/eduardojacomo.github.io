@@ -172,6 +172,10 @@ onMounted(() => {
   padding: 8rem 4rem 4rem;
   border-top: 1px solid rgba(255,255,255,0.06);
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ── HEADER ── */
@@ -200,6 +204,8 @@ onMounted(() => {
   gap: 6rem;
   align-items: start;
   margin-bottom: 6rem;
+  width: 100%;
+  max-width: 1280px;
 }
 
 .ct-left {

@@ -174,6 +174,10 @@ onMounted(() => {
   padding: 5rem 4rem;
   border-top: 1px solid rgba(255,255,255,0.06);
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ── HEADER ── */
@@ -202,6 +206,7 @@ onMounted(() => {
   grid-template-columns: 1fr 1.5fr;
   gap: 4.5rem;
   align-items: start;
+  max-width: 1280px;
 }
 
 /* ═══════════════════════════
@@ -368,6 +373,8 @@ onMounted(() => {
   flex-direction: column;
   gap: 1.2rem;
   margin-top: 3rem;
+  width: 100%;
+  max-width: 1280px;
 }
 
 .skill-groups {

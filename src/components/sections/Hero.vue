@@ -38,84 +38,86 @@ useHeroAnimation();
         </a>
       </div>
 
-      <!-- Main content: two-column grid -->
       <div class="hero-content">
-
-
-        <div class="hero-col-left">
-
-          <p class="hero-eyebrow">
-            <span class="hero-eyebrow-inner" data-text="// Full Stack Developer"></span>
-          </p>
-
-          <h1 class="hero-name">
-            <span class="hero-line-wrap"><span class="hero-line-inner">Eduardo</span></span>
-            <span class="hero-line-wrap"><span class="hero-line-inner hero-line-dim">Jácomo</span></span>
-          </h1>
-
-          <div class="hero-text-effect">
-            <TextEffect :words="['Developer', 'FullStack', 'Freelancer']" />
+        <div class="hero-container">
+  
+  
+          <div class="hero-col-left">
+  
+            <p class="hero-eyebrow">
+              <span class="hero-eyebrow-inner" data-text="// Full Stack Developer"></span>
+            </p>
+  
+            <h1 class="hero-name">
+              <span class="hero-line-wrap"><span class="hero-line-inner">Eduardo</span></span>
+              <span class="hero-line-wrap"><span class="hero-line-inner hero-line-dim">Jácomo</span></span>
+            </h1>
+  
+            <div class="hero-text-effect">
+              <TextEffect :words="['Developer', 'FullStack', 'Freelancer']" />
+            </div>
+  
+            <p class="hero-lead">
+              Transformando dados complexos em experiências digitais robustas.
+              Do planejamento ao deploy — soluções que escalam.
+            </p>
+  
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn--primary">Ver Projetos ↓</a>
+              <a href="#contact" class="btn btn--ghost">Fale Comigo</a>
+            </div>
+  
           </div>
-
-          <p class="hero-lead">
-            Transformando dados complexos em experiências digitais robustas.
-            Do planejamento ao deploy — soluções que escalam.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn--primary">Ver Projetos ↓</a>
-            <a href="#contact" class="btn btn--ghost">Fale Comigo</a>
+  
+          <!-- ── COL RIGHT: stats + stack + meta ── -->
+          <div class="hero-col-right">
+  
+            <!-- Status badge -->
+            <div class="hero-status">
+              <span class="status-dot"></span>
+              <span class="status-text">Disponível para projetos</span>
+            </div>
+  
+            <!-- Stats -->
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <span class="stat-num">2+</span>
+                <span class="stat-label">Anos de experiência</span>
+              </div>
+              <div class="hero-stat">
+                <span class="stat-num">20+</span>
+                <span class="stat-label">Projetos entregues</span>
+              </div>
+              <div class="hero-stat">
+                <span class="stat-num">∞</span>
+                <span class="stat-label">Bugs resolvidos</span>
+              </div>
+            </div>
+  
+            <!-- Stack highlight -->
+            <div class="hero-stack">
+              <p class="stack-label">Stack principal</p>
+              <div class="stack-pills">
+                <span class="stack-pill">Vue.js</span>
+                <span class="stack-pill">Next.js</span>
+                <span class="stack-pill">Python</span>
+                <span class="stack-pill">.NET</span>
+                <span class="stack-pill">PostgreSQL</span>
+                <span class="stack-pill">Node.js</span>
+              </div>
+            </div>
+  
+            <!-- Location -->
+            <div class="hero-location">
+              <svg class="meta-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>RJ, Brasil</span>
+            </div>
+  
           </div>
-
+  
         </div>
-
-        <!-- ── COL RIGHT: stats + stack + meta ── -->
-        <div class="hero-col-right">
-
-          <!-- Status badge -->
-          <div class="hero-status">
-            <span class="status-dot"></span>
-            <span class="status-text">Disponível para projetos</span>
-          </div>
-
-          <!-- Stats -->
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <span class="stat-num">2+</span>
-              <span class="stat-label">Anos de experiência</span>
-            </div>
-            <div class="hero-stat">
-              <span class="stat-num">20+</span>
-              <span class="stat-label">Projetos entregues</span>
-            </div>
-            <div class="hero-stat">
-              <span class="stat-num">∞</span>
-              <span class="stat-label">Bugs resolvidos</span>
-            </div>
-          </div>
-
-          <!-- Stack highlight -->
-          <div class="hero-stack">
-            <p class="stack-label">Stack principal</p>
-            <div class="stack-pills">
-              <span class="stack-pill">Vue.js</span>
-              <span class="stack-pill">Next.js</span>
-              <span class="stack-pill">Python</span>
-              <span class="stack-pill">.NET</span>
-              <span class="stack-pill">PostgreSQL</span>
-              <span class="stack-pill">Node.js</span>
-            </div>
-          </div>
-
-          <!-- Location -->
-          <div class="hero-location">
-            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>RJ, Brasil</span>
-          </div>
-
-        </div>
-
       </div>
+      <!-- Main content: two-column grid -->
 
       <!-- Scroll indicator -->
       <div class="vertical">
@@ -216,8 +218,16 @@ useHeroAnimation();
   margin: 0 0 0 8px;
 }
 
-/* ── HERO CONTENT: two-column grid ── */
 .hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* ── HERO CONTENT: two-column grid ── */
+.hero-container {
   position: relative; z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -225,7 +235,10 @@ useHeroAnimation();
   gap: 4rem;
   flex: 1;
   padding: 9rem 4rem 4rem 2rem;
+  max-width: 1280px;
 }
+
+
 
 /* ── COL LEFT ── */
 .hero-col-left {
@@ -466,7 +479,7 @@ useHeroAnimation();
 
 /* ── RESPONSIVE ── */
 @media screen and (max-width: 1024px) {
-  .hero-content {
+  .hero-container {
     grid-template-columns: 1fr;
     padding: 9rem 2rem 4rem 2rem;
     gap: 3rem;
@@ -484,7 +497,7 @@ useHeroAnimation();
 
 @media screen and (max-width: 780px) {
   .banner { padding: 0 1rem 2rem 0; }
-  .hero-content { padding: 8rem 1.5rem 3.5rem 1.5rem; gap: 2.5rem; }
+  .hero-container { padding: 8rem 1.5rem 3.5rem 1.5rem; gap: 2.5rem; }
   .hero-col-right { flex-direction: column; }
   .hero-name { font-size: clamp(2.8rem, 12vw, 5rem); }
   .hero-lead { font-size: 0.82rem; }
