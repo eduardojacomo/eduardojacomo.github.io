@@ -66,16 +66,16 @@ onBeforeUnmount(() => {
     <ul class="nav-links-desktop">
       <template v-if="isHomePage">
         <li><a @click.prevent="scrollTo('home')">{{ t('_nav._home') }}</a></li>
-        <li><a @click.prevent="scrollTo('services')">{{ t('_nav._services') }}</a></li>
         <li><a @click.prevent="scrollTo('about')">{{ t('_nav._about') }}</a></li>
         <li><a @click.prevent="scrollTo('portfolio')">{{ t('_nav._projects') }}</a></li>
+        <li><a @click.prevent="scrollTo('services')">{{ t('_nav._services') }}</a></li>
         <li><a @click.prevent="scrollTo('contact')">{{ t('_nav._contact') }}</a></li>
       </template>
       <template v-else>
         <li><router-link to="/">{{ t('_nav._home') }}</router-link></li>
-        <li><router-link to="/#services">{{ t('_nav._services') }}</router-link></li>
         <li><router-link to="/#about">{{ t('_nav._about') }}</router-link></li>
         <li><router-link to="/#portfolio">{{ t('_nav._projects') }}</router-link></li>
+        <li><router-link to="/#services">{{ t('_nav._services') }}</router-link></li>
         <li><router-link to="/#contact">{{ t('_nav._contact') }}</router-link></li>
       </template>
     </ul>

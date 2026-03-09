@@ -347,6 +347,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
   background: var(--color-background, #060608);
   color: var(--color-text, #e2e2ea);
   padding-top: 58.09px;
+  align-items: center;
 }
 
 .detail-topbar {
@@ -410,6 +411,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown));
   grid-template-columns: 320px 1fr;
   margin-top: 64px;
   min-height: calc(100vh - 64px);
+  max-width: 1280px;
 }
 
 
